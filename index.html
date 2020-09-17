@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/camera.css">
+    <title>Camera</title>
+</head>
+<body>
+    <div id="allow">включите<br/>камеру</div>
+    <div id="camera">
+        <video id="video" autoplay="autoplay" ></video>
+        <div class="button-wrapper">
+            <img id="camera-button" src="img/camera_button.png" alt="">
+        </div>
+    </div>
+    <div id="photo">
+        <canvas id="canvas"></canvas>
+        <div class="button-wrapper">
+            <img id="close-button" src="img/close_button.png" alt="">
+        </div>
+    </div>
+    <img id="img" src="" alt="">
+    <script src="scripts/camera-script.js"></script>
+</body>
+</html>
