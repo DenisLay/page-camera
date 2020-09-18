@@ -21,23 +21,34 @@ window.onload = function() {
         block.style.alignItems = 'center';
     }
 
+    function displayPhoto() {
+        photo.style.display = 'flex';
+        photo.style.flexDirection = 'column';
+        photo.style.alignItems = 'center';
+        photo.style.justifyContent = 'center';
+        console.log(photo.style.width);
+        console.log(photo.style.height);
+        canvas.style.width = video.videoWidth;
+        canvas.style.height = video.videoHeight;
+    }
+
     function captureMe() {
-        
-        //context.translate(canvas.width, 0);
-        //context.scale(-1, 1);
 
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
-        var base64dataUrl = canvas.toDataURL('image/png');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
 
-        //var imageDataURL = canvas.toDataURL('image/png');
+        context.translate(canvas.width, 0);
+        context.scale(-1, 1);
 
-        //image.setAttribute('src', imageDataURL);
+        context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
     }
 
     cameraButton.onclick = () => {
+        //photo.style.width = video.videoWidth;
+        //photo.style.height = video.videoHeight;
         captureMe();
         hide(camera);
-        display(photo);
+        displayPhoto();
     }
 
     closeButton.onclick = () => {
